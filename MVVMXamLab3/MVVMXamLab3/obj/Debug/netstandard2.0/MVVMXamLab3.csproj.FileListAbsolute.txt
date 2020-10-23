@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\MVVMXamLab3.csprojAssemblyReference.cache
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\MVVMXamLab3.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\MVVMXamLab3.AssemblyInfo.cs
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\MVVMXamLab3.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\bin\Debug\netstandard2.0\MVVMXamLab3.deps.json
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\bin\Debug\netstandard2.0\MVVMXamLab3.dll
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\bin\Debug\netstandard2.0\ref\MVVMXamLab3.dll
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\bin\Debug\netstandard2.0\MVVMXamLab3.pdb
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\Views\SouvenirPage.xaml.g.cs
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\Views\SouvenirsListPage.xaml.g.cs
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\MVVMXamLab3.dll
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\ref\MVVMXamLab3.dll
+C:\Users\User\source\repos\MVVMXamLab3\MVVMXamLab3\MVVMXamLab3\obj\Debug\netstandard2.0\MVVMXamLab3.pdb
