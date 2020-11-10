@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Editor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ASPLabs2_4.Models.Electronic
+
+<h2>Изменить</h2>
+@using (Html.BeginForm("Editor", "Edit", FormMethod.Post))
+{
+    @*@Html.HiddenFor(a => a.Id)
+    @Html.HiddenFor(a => a.Name)
+    @Html.HiddenFor(a => a.Maker)
+    @Html.HiddenFor(a => a.ImagePath)
+    @Html.HiddenFor(a => a.ReleaseYear)
+    @Html.HiddenFor(a => a.Price)*@
+
+    @Html.EditorForModel()
+    <br>
+    <input type="submit" value="Изменить" />
+}
+
