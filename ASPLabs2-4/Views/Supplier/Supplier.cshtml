@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Supplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<ASPLabs2_4.Models.Supplier>
+
+<h2>Поставщики</h2>
+
+@Html.ActionLink("Добавить нового поставщика", "Add")
+<table>
+    <tr style="border-bottom: 2px solid gray;">
+        <td><p>Название</p></td>
+        <td><p>Страна</p></td>
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td><p>@b.Name</p></td>
+            <td><p>@b.Country</p></td>
+            <td><p><a href="/Supplier/Info/@b.Id">Детали</a></p></td>
+            <td><p><a href="/Supplier/Editor/@b.Id">Изменить</a></p></td>
+            <td><p><a href="/Supplier/Delete/@b.Id">Удалить</a></p></td>
+        </tr>
+    }
+</table>
+

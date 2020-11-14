@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Editor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ASPLabs2_4.ViewModels.ElecCategViewModel
+
+<h2>Изменить</h2>
+@using (Html.BeginForm("Editor", "Edit", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(a => a.Electronic.Id)
+    <p>Имя</p>
+    @Html.EditorFor(a => a.Electronic.Name)
+    @Html.ValidationMessageFor(a => a.Electronic.Name)
+    <p>Производитель</p>
+    @Html.EditorFor(a => a.Electronic.Maker)
+    @Html.ValidationMessageFor(a => a.Electronic.Maker)
+    <p>Изображение</p>
+    <input type="file" accept="image/*" value="@Model.Electronic.ImagePath" name="upload">
+    <p>Год выпуска</p>
+    <input type="date" name="Electronic.ReleaseYear" value="@(Model.Electronic.ReleaseYear.ToString("yyyy-MM-dd"))">
+    @Html.ValidationMessageFor(a => a.Electronic.ReleaseYear)
+    <p>Цена</p>
+    @Html.EditorFor(a => a.Electronic.Price)
+    @Html.ValidationMessageFor(a => a.Electronic.Price)
+    <p>Категория</p>
+    @Html.DropDownList("CategoryId",
+   Model.Categories.Select(m => new SelectListItem
+   {
+       Selected = m.Id == Model.Electronic.CategoryId ? true : false,
+       Value = m.Id.ToString(),
+       Text = m.Name
+   }),
+   new { @class = "form-control", value = Model.Electronic.CategoryId })
+    <br>
+    <input type="submit" value="Изменить" />
+}
+
