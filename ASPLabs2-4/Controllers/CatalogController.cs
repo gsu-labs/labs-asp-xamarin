@@ -54,15 +54,13 @@ namespace ASPLabs2_4.Controllers
         {
             purchase.Date = DateTime.Now;
             Cart.Cart cart = (Cart.Cart)Session["Cart" + User.Identity.Name];
-            if (cart.Lines.Count() > 0)
+            if (cart!= null && cart.Lines.Count() > 0)
             {
-                //List<Purchase> purchases = new List<Purchase>();
                 foreach (var item in cart.Lines)
                 {
                     purchase.ElectronicId = item.Electronic.Id;
                     for (int i = 0; i < item.Quantity; i++)
                     {
-                        //purchases.Add(purchase);
                         db.Purchases.Add(purchase);
                         db.SaveChanges();
                     }
@@ -70,7 +68,6 @@ namespace ASPLabs2_4.Controllers
                 PurchCartViewModel purchCartViewModel = new PurchCartViewModel { Purchase = purchase, Count = cart.Lines.Count() };
                 cart.Clear();
                 return View("BoughtAll", purchCartViewModel);
-                //return RedirectToAction("BoughtAll", purchases);
             }
             else
             {
@@ -111,16 +108,5 @@ namespace ASPLabs2_4.Controllers
             return new List<Electronic>(db.Electronics.Where(predicate));
 
         }
-
-        //    private List<Electronic> Sort(string sort)
-        //    {
-        //        var predicate = PredicateBuilder.New<Electronic>(e => false);
-
-        //        if(sort == "Все")
-        //        predicate.And(a => a.ReleaseYear == result2);
-
-
-        //        return new List<Electronic>(db.Electronics.Where(predicate));
-        //    }
     }
 }

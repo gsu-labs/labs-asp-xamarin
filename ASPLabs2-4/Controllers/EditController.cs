@@ -44,7 +44,6 @@ namespace ASPLabs2_4.Controllers
         {
             if (upload != null)
             {
-                //string fileName = System.IO.Path.GetFileName(upload.FileName);
                 string path = "/Pictures/" + upload.FileName;
                 upload.SaveAs(Server.MapPath(path));
                 electronic.ImagePath = path;
@@ -53,7 +52,6 @@ namespace ASPLabs2_4.Controllers
                 db.SaveChanges();
 
             }
-            Response.Write("<script>alert('значение');</script>");
             return RedirectToAction("Edit");
         }
 
@@ -75,13 +73,28 @@ namespace ASPLabs2_4.Controllers
         {
             ViewBag.ElectronicId = id;
             Electronic electronic = db.Electronics.FirstOrDefault(a => a.Id == id);
-            return View(electronic);
+
+            List<CategoryModel> categoryModels = db.Categories.ToList().Select(c => new CategoryModel { Id = c.Id, Name = c.Name }).ToList();
+            ElecCategViewModel elecCategViewModel = new ElecCategViewModel() { Electronic=electronic, Categories = categoryModels };
+            return View(elecCategViewModel);
         }
 
         [HttpPost]
-        public ActionResult Editor(Electronic electronic)
+        public ActionResult Editor(Electronic electronic, HttpPostedFileBase upload, int categoryId)
         {
-            db.Entry(electronic).State = EntityState.Modified;
+            Electronic electronicOld = db.Electronics.FirstOrDefault(a => a.Id == electronic.Id);
+            electronicOld.Name = electronic.Name;
+            electronicOld.Maker= electronic.Maker;
+            if(upload != null)
+            {
+                string path = "/Pictures/" + upload.FileName;
+                upload.SaveAs(Server.MapPath(path));
+                electronicOld.ImagePath = path;
+               
+            }
+            electronicOld.Price = electronic.Price;
+            electronicOld.ReleaseYear = electronic.ReleaseYear;
+            electronicOld.Category = db.Categories.First(a => a.Id == categoryId);
             db.SaveChanges();
             return RedirectToAction("Edit");
         }
