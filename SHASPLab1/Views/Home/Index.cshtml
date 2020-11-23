@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Распродажа сока</h3>
+    <table>
+        <tr>
+            <td><p>Название</p></td>
+            <td><p>Производитель</p></td>
+            <td><p>Срок годности</p></td>
+            <td><p>Цена</p></td>
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Juices)
+        {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Maker</p></td>
+                <td><p>@b.ShelfLife.ToShortDateString()</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p><a href="/Home/Buy/@b.Id">Купить</a></p></td>
+            </tr>
+        }
+    </table>
+</div>
