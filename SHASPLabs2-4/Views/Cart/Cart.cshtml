@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SHASPLabs2_4.Cart.Cart
+
+<h2>Корзина</h2>
+<div>
+    @if (Model.Lines.Count() > 0)
+    {
+        <table>
+            <tr style="border-bottom: 2px solid gray;">
+                <td><p>Название</p></td>
+                <td><p>Производитель</p></td>
+                <td><p>Картинка</p></td>
+                <td><p>Срок годности</p></td>
+                <td><p>Цена</p></td>
+                <td><p>Количество данного товара для покупки</p></td>
+            </tr>
+            @foreach (var b in Model.Lines)
+            {
+                <tr>
+                    <td><p>@b.Juice.Name</p></td>
+                    <td><p>@b.Juice.Maker</p></td>
+                    <td><img width="50" height="50" src="@b.Juice.ImagePath" /></td>
+                    <td><p>@b.Juice.ShelfLife.ToShortDateString()</p></td>
+                    <td><p>@b.Juice.Price</p></td>
+                    <td><p style="text-align: center;">@b.Quantity</p></td>
+                    <td><a href="/Cart/Delete/@b.Juice.Id">Удалить из корзины</a></td>
+                </tr>
+            }
+        </table>
+        <br>
+        <br>
+        <p>Общая стоимость: @Model.ComputeTotalValue()</p>
+        <div>
+            @Html.ActionLink("Приобрести всё", "Buy", "Catalog")
+            <br>
+            @Html.ActionLink("Очистить всё из корзины", "ClearAll")
+        </div>
+    }
+</div>

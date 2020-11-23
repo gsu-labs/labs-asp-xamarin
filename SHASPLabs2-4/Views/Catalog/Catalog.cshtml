@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Catalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@model List<SHASPLabs2_4.Models.Juice>
+
+<div>
+    <h3>Распродажа сока</h3>
+    <br>
+    <br>
+    <form class="form-inline">
+        @Html.TextBox("searchString")
+        <input type="submit" value="Поиск">
+    </form>
+    <br>
+    <form class="form-inline">
+        <select name="sort" class="form-control">
+            <option>Все</option>
+            <option value="Имя">Имя</option>
+            <option value="Производитель">Производитель</option>
+            <option value="Цена">Цена</option>
+        </select>
+        <input type="submit" value="Сортировать">
+    </form>
+    <br>
+    <table>
+        <tr style="border-bottom: 2px solid gray;">
+            <td><p>Название</p></td>
+            <td><p>Производитель</p></td>
+            <td><p>Картинка</p></td>
+            <td><p>Срок годности</p></td>
+            <td><p>Цена</p></td>
+            <td></td>
+        </tr>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Maker</p></td>
+                <td><img width="50" height="50" src="@b.ImagePath" /></td>
+                <td><p>@b.ShelfLife.ToShortDateString()</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p><a href="/Catalog/Buy/@b.Id">Купить</a></p></td>
+                <td><p><a href="/Cart/Add/@b.Id">Добавить в корзину</a></p></td>
+            </tr>
+        }
+    </table>
+</div>
+

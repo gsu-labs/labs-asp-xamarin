@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SHASPLabs2_4.ViewModels.JuiceCategViewModel
+
+<h2>Добавление сока</h2>
+<div>
+    @using (Html.BeginForm("Add", "Edit", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return file_selected" }))
+    {
+        <p>Введите название</p>
+        @Html.EditorFor(a => a.Juice.Name)
+        @Html.ValidationMessageFor(a => a.Juice.Name)
+        <p>Введите производителя</p>
+        @Html.TextBoxFor(a => a.Juice.Maker)
+        @Html.ValidationMessageFor(a => a.Juice.Maker)
+        <p>Загрузите изображение</p>
+        <input type="file" accept="image/*" name="upload" id="f1" onchange="file_selected = true;">
+        <p>Введите срок годности</p>
+        @Html.TextBoxFor(a => a.Juice.ShelfLife, new { type = "date" })
+        @Html.ValidationMessageFor(a => a.Juice.ShelfLife)
+        <p>Введите цену</p>
+        @Html.TextBoxFor(a => a.Juice.Price)
+        @Html.ValidationMessageFor(a => a.Juice.Price)
+        <br>
+        <p>Категория</p>
+        @Html.DropDownList("CategoryId",
+       Model.Categories.Select(m => new SelectListItem
+       {
+           Value = m.Id.ToString(),
+           Text = m.Name
+       }),
+       new { @class = "form-control" })
+        <br>
+        <br>
+        <input type="submit" onclick="showNoFile()" value="Добавить">
+    }
+
+    @Html.ActionLink("Вернуться назад", "Back")
+</div>
+
+<script type="text/javascript">
+    var file_selected = false;
+    function showNoFile() {
+        if (!file_selected) {
+            alert('Изображение не выбрано!');
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+
+
