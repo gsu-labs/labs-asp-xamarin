@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab4.Views.SearchPages.Search3Page">
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout1">
+            <Label Text="Введите название: "/>
+            <Entry x:Name="entry1"/>
+            <Button Text="Произвести поиск" Clicked="SearchFromTable3" />
+            <ListView x:Name="table3List">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" FontSize="Medium"/>
+                                    <Label Text="{Binding Adress}" FontSize="Medium"/>
+                                    <Label Text="{Binding Phone}" FontSize="Medium"/>
+                                    <Label Text="{Binding Email}" FontSize="Medium"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab4.Views.TablePages.Table3Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Название" />
+            <Entry Text="{Binding Name}" />
+            <Label Text="Адрес" />
+            <Entry Text="{Binding Adress}" />
+            <Label Text="Телефон" />
+            <Entry Text="{Binding Phone}" Keyboard="Telephone" />
+            <Label Text="E-mail"/>
+            <Entry Text="{Binding Email}" Keyboard="Email" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Сохранить" Clicked="SaveMovie" />
+                <Button Text="Удалить" Clicked="DeleteMovie" />
+                <Button Text="Отмена" Clicked="Cancel" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

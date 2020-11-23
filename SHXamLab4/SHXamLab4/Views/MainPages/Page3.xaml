@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab4.Views.MainPages.Page3" Title="Table3">
+    <ContentPage.Content>
+        <StackLayout  Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label  Grid.Column="0" Grid.Row="0" Text="Name"/>
+                <Label  Grid.Column="1" Grid.Row="0" Text="Adress"/>
+                <Label Grid.Column="2" Grid.Row="0" Text="Phone"/>
+                <Label Grid.Column="3" Grid.Row="0" Text="Email"/>
+            </Grid>
+            <ListView x:Name="table3List" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Label Grid.Column="0" Text="{Binding Name}" FontSize="Large"/>
+                                    <Label Grid.Column="1" Text="{Binding Adress}" FontSize="Medium"/>
+                                    <Label Grid.Column="2" Text="{Binding Phone}" FontSize="Medium"/>
+                                    <Label Grid.Column="3" Text="{Binding Email}" FontSize="Medium"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Добавить" Clicked="CreateCinema" />
+            <Button Text="Поиск" Clicked="SearchCinema" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

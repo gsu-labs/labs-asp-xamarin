@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab4.Views.SearchPages.Search2Page">
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout1">
+            <Label Text="Введите количество: "/>
+            <Entry x:Name="entry1"/>
+            <Button Text="Произвести поиск" Clicked="SearchFromTable2" />
+            <ListView x:Name="table2List">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding IdMovie}" FontSize="Large"/>
+                                    <Label Text="{Binding Count}" FontSize="Medium"/>
+                                    <Label Text="{Binding SellPrice}" FontSize="Medium"/>
+                                    <Label Text="{Binding DateSell}" FontSize="Medium"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

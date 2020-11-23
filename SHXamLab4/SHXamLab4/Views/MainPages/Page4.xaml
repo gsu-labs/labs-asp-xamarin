@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab4.Views.MainPages.Page4" Title="Запросы">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="3">
+                <Label Text="Введите кинотеатр: "/>
+                <Entry x:Name="entry1"/>
+                <Button Text="Вывести список фильмов по кинотеатру" Clicked="Query1"/>
+                <Grid x:Name="grid1" IsVisible="false">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Column="0" Grid.Row="0" Text="Name"/>
+                    <Label  Grid.Column="1" Grid.Row="0" Text="Cinema"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="Date"/>
+                    <Label Grid.Column="3" Grid.Row="0" Text="Price"/>
+                </Grid>
+                <ListView x:Name="listView1" IsVisible="true" HeightRequest="150" WidthRequest="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Label Grid.Column="0" Text="{Binding Name}" FontSize="Large"/>
+                                        <Label Grid.Column="1" Text="{Binding Cinema}" FontSize="Medium"/>
+                                        <Label Grid.Column="2" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" FontSize="Medium"/>
+                                        <Label Grid.Column="3" Text="{Binding Price}" FontSize="Medium"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Label Text="Введите цену: "/>
+                <Entry x:Name="entry2"/>
+                <Button Text="Вывести список фильмов, цена кот. &lt; заданной" Clicked="Query2"/>
+                <Grid x:Name="grid2" IsVisible="false">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Column="0" Grid.Row="0" Text="Name"/>
+                    <Label  Grid.Column="1" Grid.Row="0" Text="IdCinema"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="Date"/>
+                    <Label Grid.Column="3" Grid.Row="0" Text="Price"/>
+                </Grid>
+                <ListView x:Name="listView2" HeightRequest="150" WidthRequest="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Label Grid.Column="0" Text="{Binding Name}" FontSize="Large"/>
+                                        <Label Grid.Column="1" Text="{Binding IdCinema}" FontSize="Medium"/>
+                                        <Label Grid.Column="2" Text="{Binding Date}" FontSize="Medium"/>
+                                        <Label Grid.Column="3" Text="{Binding Price}" FontSize="Medium"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+                <Label Text="Введите год выхода: "/>
+                <Entry x:Name="entry3"/>
+                <Button Text="Вывести список фильмов с указанием количества и общей стоимостью проданных билетов за определенный год" Clicked="Query3"/>
+                <Grid x:Name="grid3" IsVisible="false">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Column="0" Grid.Row="0" Text="Name"/>
+                    <Label  Grid.Column="1" Grid.Row="0" Text="Count"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="DataSell"/>
+                </Grid>
+                <ListView x:Name="listView3" HeightRequest="150" WidthRequest="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Label Grid.Column="0" Text="{Binding Name}" FontSize="Large"/>
+                                        <Label Grid.Column="1" Text="{Binding Count}" FontSize="Medium"/>
+                                        <Label Grid.Column="2" Text="{Binding DateSell, StringFormat='{0:dd/MM/yyyy}'}" FontSize="Medium"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label x:Name="labeLSumPrice" FontSize="Medium"/>
+
+
+                <Label Text="Введите дату выпуска: "/>
+                <Entry x:Name="entry4"/>
+                <Button Text="Вывести список фильмов с указанной датой выпуска" Clicked="Query4"/>
+                <Grid x:Name="grid4" IsVisible="false">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Column="0" Grid.Row="0" Text="Name"/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="Date"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="Price"/>
+                </Grid>
+                <ListView x:Name="listView4" HeightRequest="150" WidthRequest="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Label Grid.Column="0" Text="{Binding Name}" FontSize="Large"/>
+                                        <Label Grid.Column="2" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" FontSize="Medium"/>
+                                        <Label Grid.Column="3" Text="{Binding Price}" FontSize="Medium"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+                <Label Text="Введите название кинотеатра: "/>
+                <Entry x:Name="entry5"/>
+                <Button Text="Вывести список фильмов с их количеством показов в заданном кинотеатре" Clicked="Query5"/>
+                <Grid x:Name="grid5" IsVisible="false">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Column="0" Grid.Row="0" Text="Name"/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="NameCinema"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="Date"/>
+                    <Label Grid.Column="3" Grid.Row="0" Text="Price"/>
+                    <Label Grid.Column="4" Grid.Row="0" Text="Count"/>
+                </Grid>
+                <ListView x:Name="listView5" HeightRequest="150" WidthRequest="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Label Grid.Column="0" Text="{Binding Name}" FontSize="Large"/>
+                                        <Label Grid.Column="1" Text="{Binding NameCinema}" FontSize="Medium"/>
+                                        <Label Grid.Column="2" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" FontSize="Medium"/>
+                                        <Label Grid.Column="3" Text="{Binding Price}" FontSize="Medium"/>
+                                        <Label Grid.Column="4" Text="{Binding Count}" FontSize="Medium"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
