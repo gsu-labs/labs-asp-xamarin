@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab1.MainPage">
+
+    <StackLayout x:Name="stackLayout1" BackgroundColor="White">
+        <Label Text="Киношка" HorizontalTextAlignment="Center" Padding="24" TextColor="Gold" FontSize="30"/>
+
+        <Picker x:Name="picker1" TranslationX="25" Title="Список фильмов">
+        </Picker>
+        <Label FontSize="20" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Избранные фильмы"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button x:Name="buttondAdd" TextColor="Violet"  Margin="0,30,0,0" Text="Добавить фильм" BackgroundColor="White"></Button>
+    </StackLayout>
+
+</ContentPage>
