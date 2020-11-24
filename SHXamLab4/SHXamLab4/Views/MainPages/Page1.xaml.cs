@@ -1,4 +1,6 @@
 ﻿using SHXamLab4.Models;
+using SHXamLab4.Views.SearchPages;
+using SHXamLab4.Views.TablePages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
