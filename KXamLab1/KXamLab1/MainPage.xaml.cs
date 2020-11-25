@@ -45,7 +45,7 @@ namespace KXamLab1
             picker1.Items.Add(wallpaper2.Name);
             picker1.Items.Add(wallpaper3.Name);
 
-            picker1.SelectedIndexChanged += SelectedSouvenir;
+            picker1.SelectedIndexChanged += SelectedWallpaper;
             buttondAdd.Clicked += OnButtonAddClicked;
         }
 
