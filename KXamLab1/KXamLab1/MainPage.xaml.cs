@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -144,7 +144,7 @@ namespace KXamLab1
         }
 
 
-        private void SelectedSouvenir(object sender, EventArgs e)
+        private void SelectedWallpaper(object sender, EventArgs e)
         {
             if (stackLayout1.Children.Count > 5)
             {
