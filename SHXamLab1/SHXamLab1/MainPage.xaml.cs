@@ -45,7 +45,7 @@ namespace SHXamLab1
             picker1.Items.Add(movie2.Name);
             picker1.Items.Add(movie3.Name);
 
-            picker1.SelectedIndexChanged += SelectedSouvenir;
+            picker1.SelectedIndexChanged += SelectedMovie;
             buttondAdd.Clicked += OnButtonAddClicked;
         }
 
