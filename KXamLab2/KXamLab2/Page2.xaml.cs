@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,10 +18,10 @@ namespace KXamLab2
         {
             InitializeComponent();
             GroupsAndUpdate();
-            Page1.Wallpapers.CollectionChanged += Souvenirs_CollectionChanged;
+            Page1.Wallpapers.CollectionChanged += Wallpapers_CollectionChanged;
         }
 
-        private void Souvenirs_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void Wallpapers_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             GroupsAndUpdate();
         }
