@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\SXamLab5\SXamLab5\SXamLab5\bin\Debug\netstandard2.0\SXamLab5.deps.json
+C:\Users\User\source\repos\SXamLab5\SXamLab5\SXamLab5\bin\Debug\netstandard2.0\SXamLab5.dll
+C:\Users\User\source\repos\SXamLab5\SXamLab5\SXamLab5\obj\Debug\netstandard2.0\SXamLab5.csprojAssemblyReference.cache
+C:\Users\User\source\repos\SXamLab5\SXamLab5\SXamLab5\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\source\repos\SXamLab5\SXamLab5\SXamLab5\obj\Debug\netstandard2.0\SXamLab5.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\SXamLab5\SXamLab5\SXamLab5\obj\Debug\netstandard2.0\SXamLab5.AssemblyInfo.cs
