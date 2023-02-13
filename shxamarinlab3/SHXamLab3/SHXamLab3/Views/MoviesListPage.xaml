@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab3.Views.MoviesListPage" Title="Список фильмов">
+    <StackLayout>
+        <Button Text="Добавить" Command="{Binding CreateMovieCommand}" />
+        <ListView x:Name="moviesList" ItemsSource="{Binding Movies}"
+              SelectedItem="{Binding SelectedMovie, Mode=TwoWay}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Вверх" Command="{Binding Path=ListViewModel.MoveToTopCommand}" CommandParameter="{Binding}" />
+                            <MenuItem Text="Вниз"  Command="{Binding Path=ListViewModel.MoveToBottomCommand}" CommandParameter="{Binding}" />
+                            <MenuItem Text="Удалить" Command="{Binding Path=ListViewModel.RemoveCommand}" CommandParameter="{Binding}" />
+                        </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="Medium" />
+                                <Label Text="{Binding Genre}" FontSize="Small" />
+                                <Label Text="{Binding Price}" FontSize="Small" />
+                                <Label Text="{Binding Date,StringFormat='{0:dd/MM/yyyy}'}" FontSize="Small" />
+                                <Label Text="{Binding Email}" FontSize="Small" />
+                                <Label Text="{Binding Phone}" FontSize="Small" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

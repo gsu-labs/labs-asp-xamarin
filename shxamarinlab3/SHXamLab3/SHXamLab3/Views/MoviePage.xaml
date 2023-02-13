@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SHXamLab3.Views.MoviePage" Title="Информация о фильме">
+    <StackLayout>
+        <StackLayout x:Name="movieStack">
+            <Label Text="Имя" />
+            <Entry Text="{Binding Name}" FontSize="Medium" />
+            <Label Text="Жанр" />
+            <Entry Text="{Binding Genre}" FontSize="Medium" />
+            <Label Text="Цена" />
+            <Entry Text="{Binding Price}" Keyboard="Numeric" FontSize="Medium" />
+            <Label Text="Дата выхода" />
+            <DatePicker Date="{Binding Date}" FontSize="Medium" />
+            <Label Text="Электронная почта" />
+            <Entry Text="{Binding Email}" Placeholder="стандартный mail.ru" Keyboard="Email" FontSize="Medium" />
+            <Label Text="Телефон" />
+            <Entry Text="{Binding Phone}" Keyboard="Telephone" FontSize="Medium" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Добавить" Command="{Binding ListViewModel.SaveMovieCommand}" CommandParameter="{Binding}" />
+            <Button Text="Удалить" Command="{Binding ListViewModel.DeleteMovieCommand}" CommandParameter="{Binding}" />
+            <Button Text="Назад" Command="{Binding ListViewModel.BackCommand}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
