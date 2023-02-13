@@ -1,0 +1,40 @@
+﻿@model SHASPLabs2_4.Models.Purchase
+@{
+    ViewBag.Title = "Buy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Форма оформления покупки</h3>
+    @using (Html.BeginForm("Buy", "Catalog", FormMethod.Post))
+    {
+        <input type="hidden" value="@ViewBag.JuiceId" name="JuiceId" />
+        <p>Введите свое имя</p>
+        @Html.TextBoxFor(m => m.Person)
+        @Html.ValidationMessageFor(a => a.Person)
+        <br>
+        <p>Введите свой адрес</p>
+        @Html.TextAreaFor(m => m.Address)
+        @Html.ValidationMessageFor(a => a.Address)
+        <br>
+        <p>Введите Email</p>
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(a => a.Email)
+        <br>
+        <p>Введите свой номер телефона</p>
+        @Html.TextBoxFor(m => m.Phone)
+        @Html.ValidationMessageFor(a => a.Phone)
+        <br>
+        <p>Выберите форму оплаты</p>
+        @Html.RadioButtonFor(m => m.WageType, "Карта")
+        <span>Карта</span> <br />
+        @Html.RadioButtonFor(m => m.WageType, "Наличные")
+        <span>Наличные</span> <br />
+        @Html.RadioButtonFor(m => m.WageType, "Наложенным платежом")
+        <span>Наложенным платежом</span> <br />
+        @Html.ValidationMessageFor(a => a.WageType)
+        <br>
+        <input type="submit" value="Отправить" />
+    }
+</div>
+
