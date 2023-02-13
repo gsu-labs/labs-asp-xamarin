@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamLab5.SouvenirPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Имя" />
+                <Entry Text="{Binding Path=Model.Name}" FontSize="Medium" />
+                <Label Text="Производитель" />
+                <Entry Text="{Binding Path=Model.Maker}" FontSize="Medium" />
+                <Label Text="Цена" />
+                <Entry Text="{Binding Path=Model.Price}" Keyboard="Numeric" FontSize="Medium" />
+                <Label Text="Дата продажи" />
+                <DatePicker Date="{Binding Path=Model.DataSell}" FontSize="Medium" />
+                <Label Text="Электронная почта" />
+                <Entry Text="{Binding Path=Model.Email}" Keyboard="Email" FontSize="Medium" />
+                <Label Text="Телефон" />
+                <Entry Text="{Binding Path=Model.Phone}" Keyboard="Telephone" FontSize="Medium" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Сохранить" Command="{Binding ViewModel.SaveSouvenirCommand}" CommandParameter="{Binding Model}" />
+                <Button Text="Удалить" Command="{Binding ViewModel.DeleteSouvenirCommand}" CommandParameter="{Binding Model}" />
+                <Button Text="Назад" Command="{Binding Path=ViewModel.BackCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
