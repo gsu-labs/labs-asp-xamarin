@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Editor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model SASPLabs_2_4.ViewModels.WaffleCategViewModel
+
+<h2>Изменить</h2>
+@using (Html.BeginForm("Editor", "Edit", FormMethod.Post))
+{
+    @Html.HiddenFor(a => a.Waffle.Id)
+    <p>Имя</p>
+    @Html.EditorFor(a => a.Waffle.Name)
+    @Html.ValidationMessageFor(a => a.Waffle.Name)
+    <p>Производитель</p>
+    @Html.EditorFor(a => a.Waffle.Maker)
+    @Html.ValidationMessageFor(a => a.Waffle.Maker)
+    <p>Изображение</p>
+    <input type="file" accept="image/*" value="@Model.Waffle.ImagePath" name="upload">
+    <p>Год выпуска</p>
+    <input type="date" name="Electronic.ReleaseYear" value="@(Model.Waffle.ShelfLife.ToString("yyyy-MM-dd"))">
+    @Html.ValidationMessageFor(a => a.Waffle.ShelfLife)
+    <p>Цена</p>
+    @Html.EditorFor(a => a.Waffle.Price)
+    @Html.ValidationMessageFor(a => a.Waffle.Price)
+    <p>Категория</p>
+    @Html.DropDownList("CategoryId",
+   Model.Categories.Select(m => new SelectListItem
+   {
+       Selected = m.Id == Model.Waffle.CategoryId ? true : false,
+       Value = m.Id.ToString(),
+       Text = m.Name
+   }),
+   new { @class = "form-control", value = Model.Waffle.CategoryId })
+    <br>
+    <input type="submit" value="Изменить" />
+}
+
