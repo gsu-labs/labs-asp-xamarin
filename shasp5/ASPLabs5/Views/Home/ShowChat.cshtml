@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ShowChat";
+}
+
+<h2>Чат пользователей</h2>
+<!--Контейнер для элементов чата-->
+<div class="container">
+    <!--поле сообщения-->
+    <input type="text" id="message" />
+    <!--Кнопка отправки сообщения-->
+    <input type="button" id="sendmessage" value="Send" />
+    <input type="hidden" id="displayname" />
+    <ul id="discussion"></ul>
+</div>
+@section scripts {
+    <!--Ссылки на скрипты -->
+    <!--Ссылка на скрипт SignalR. Версии скриптов объявленные здесь обязательно должны соответствовать версиям скриптов в папке /Scripts проекта -->
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    <!--Ссылка на автоматически сгенерированный скрипт для хабов. -->
+    <script src="~/signalr/hubs"></script>
+    <!--Здесь объявляется скрипт SignalR для обновления страницы чата и рассылки сообщений пользователей.-->
+    <script>
+        $(function () {
+            // ссылка на автосгенерированый прокси для хаба.
+            var chat = $.connection.chatHub;
+            // Создаем функцию обратного вызова, которую должен вызвать сервер, чтобы отобразить сообщение.
+            chat.client.addNewMessage = function (name, message) {
+                // реализация функции с разметкой добавления сообщения к странице.
+                $('#discussion').append('<li><strong>' + htmlEncode(name)
+                    + '</strong>: ' + htmlEncode(message) + '</li>');
+            };
+            // Считывание  данных.
+            $('#displayname').val(prompt('Введите имя пользователя:', ''));
+            // Устанавливаем фокус на поле ввода сообщения.
+            $('#message').focus();
+            // Устанавливаем соединение с хабом.
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    // Вызываем метод рассылки сообщений с хаба.
+                    chat.server.send($('#displayname').val(), $('#message').val());
+                    // очищаем тексотовое поле и вновь устанавливаем в него фокус.
+                    $('#message').val('').focus();
+                });
+            });
+        });
+        // опциональная функция кодирования html тегов.
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
+}
+
