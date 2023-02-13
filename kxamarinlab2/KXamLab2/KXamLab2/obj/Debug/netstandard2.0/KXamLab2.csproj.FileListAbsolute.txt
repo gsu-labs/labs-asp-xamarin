@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\bin\Debug\netstandard2.0\KXamLab2.deps.json
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\bin\Debug\netstandard2.0\KXamLab2.dll
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\KXamLab2.csprojAssemblyReference.cache
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\MessagePage.xaml.g.cs
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\Page1.xaml.g.cs
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\Page2.xaml.g.cs
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\Page3.xaml.g.cs
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\KXamLab2.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\KXamLab2\KXamLab2\KXamLab2\obj\Debug\netstandard2.0\KXamLab2.AssemblyInfo.cs
