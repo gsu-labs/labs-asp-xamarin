@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model SHASPLabs2_4.ViewModels.IndexViewModel
+
+<div>
+    <h3>Распродажа сока</h3>
+    @Html.ActionLink("Добавить новый сок", "Add")
+    <br>
+    <br>
+    <form class="form-inline">
+        <label>Выберите категорию:</label>
+        <select name="categoryId" class="form-control">
+            @foreach (var categoryModel in Model.Categories)
+            {
+                <option value="@categoryModel.Id">@categoryModel.Name</option>
+            }
+        </select>
+        <label>Выберите производителя:</label>
+        <select name="maker" class="form-control">
+            <option>Все</option>
+            @foreach (var a in Model.Juices)
+            {
+
+                <option value="@a.Maker">@a.Maker</option>
+            }
+        </select>
+        <input type="submit" value="Фильтр">
+    </form>
+    <table>
+        <tr style="border-bottom: 2px solid gray;">
+            <td><p>Название</p></td>
+            <td><p>Производитель</p></td>
+            <td><p>Картинка</p></td>
+            <td><p>Срок годности</p></td>
+            <td><p>Цена</p></td>
+        </tr>
+        @foreach (var b in Model.Juices)
+        {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Maker</p></td>
+                <td><img width="50" height="50" src="@b.ImagePath" /></td>
+                <td><p>@b.ShelfLife.ToShortDateString()</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p><a href="/Edit/Info/@b.Id">Детали</a></p></td>
+                <td><p><a href="/Edit/Editor/@b.Id">Изменить</a></p></td>
+                <td><p><a href="/Edit/Delete/@b.Id">Удалить</a></p></td>
+            </tr>
+        }
+    </table>
+</div>
+

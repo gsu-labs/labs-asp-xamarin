@@ -1,0 +1,14 @@
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\bin\Debug\netstandard2.0\XamLab1.deps.json
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\bin\Debug\netstandard2.0\XamLab1.dll
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\bin\Debug\netstandard2.0\ref\XamLab1.dll
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\bin\Debug\netstandard2.0\XamLab1.pdb
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\XamLab1.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\XamLab1.AssemblyInfo.cs
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\XamLab1.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\XamLab1.dll
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\ref\XamLab1.dll
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\XamLab1.pdb
+C:\Users\User\source\repos\XamLab1\XamLab1\XamLab1\obj\Debug\netstandard2.0\XamLab1.csprojAssemblyReference.cache

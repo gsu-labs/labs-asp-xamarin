@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ASPLabs2_4.Models.Purchase
+
+<h2>Удаление покупки</h2>
+@using (Html.BeginForm("DeleteConfirmed", "Purchase", FormMethod.Post))
+{
+    @Html.HiddenFor(a => a.PurchaseId)
+    @Html.DisplayForModel()
+    <br>
+    <input type="submit" value="Удалить" />
+}

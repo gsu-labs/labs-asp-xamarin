@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\bin\Debug\netstandard2.0\XamLab5.deps.json
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\bin\Debug\netstandard2.0\XamLab5.dll
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\XamLab5.csprojAssemblyReference.cache
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\XamLab5.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\XamLab5.AssemblyInfo.cs
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\bin\Debug\netstandard2.0\ref\XamLab5.dll
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\bin\Debug\netstandard2.0\XamLab5.pdb
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\Views\SouvenirPage.xaml.g.cs
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\Views\SouvenirsListPage.xaml.g.cs
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\XamLab5.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\XamLab5.dll
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\ref\XamLab5.dll
+C:\Users\User\source\repos\XamLab5\XamLab5\XamLab5\obj\Debug\netstandard2.0\XamLab5.pdb

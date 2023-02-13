@@ -1,0 +1,60 @@
+﻿@model ASPLabs2_4.Models.Purchase
+@{
+    ViewBag.Title = "Buy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Форма оформления покупки</h3>
+    @*<form method="post" action="">
+            <input type="hidden" value="@ViewBag.ElectronicId" name="ElectronicId" />
+            <table>
+                <tr>
+                    <td><p>Введите свое имя </p></td>
+                    <td><input type="text" name="Person" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите адрес :</p></td>
+                    <td>
+                        <input type="text" name="Address" />
+                    </td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>*@
+    @using (Html.BeginForm("Buy", "Catalog", FormMethod.Post))
+    {
+        <input type="hidden" value="@ViewBag.ElectronicId" name="ElectronicId" />
+        <p>Введите свое имя</p>
+        @Html.TextBoxFor(m => m.Person)
+        @Html.ValidationMessageFor(a => a.Person)
+        <br>
+        <p>Введите свой адрес</p>
+        @Html.TextAreaFor(m => m.Address)
+        @Html.ValidationMessageFor(a => a.Address)
+        <br>
+        <p>Введите Email</p>
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(a => a.Email)
+        <br>
+        <p>Введите свой номер телефона</p>
+        @Html.TextBoxFor(m => m.Phone)
+        @Html.ValidationMessageFor(a => a.Phone)
+        <br>
+        @*<p>Выберите подарок</p>
+            @Html.ListBoxFor(m=>m.Gifts, new MultiSelectList(new string[] { "Сертификат 10 руб", "Сертификат 15 руб", "Купон на скидку 5%", "Купон на скидку 10%" }))
+            <br>
+            <br>*@
+        <p>Выберите форму оплаты</p>
+        @Html.RadioButtonFor(m => m.WageType, "Карта")
+        <span>Карта</span> <br />
+        @Html.RadioButtonFor(m => m.WageType, "Наличные")
+        <span>Наличные</span> <br />
+        @Html.RadioButtonFor(m => m.WageType, "Наложенным платежом")
+        <span>Наложенным платежом</span> <br />
+        @Html.ValidationMessageFor(a => a.WageType)
+        <br>
+        <input type="submit" value="Отправить" />
+    }
+</div>
+

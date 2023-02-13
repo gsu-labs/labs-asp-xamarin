@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Editor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model SHASPLabs2_4.ViewModels.JuiceCategViewModel
+
+<h2>Изменить</h2>
+@using (Html.BeginForm("Editor", "Edit", FormMethod.Post))
+{
+    @Html.HiddenFor(a => a.Juice.Id)
+    <p>Имя</p>
+    @Html.EditorFor(a => a.Juice.Name)
+    @Html.ValidationMessageFor(a => a.Juice.Name)
+    <p>Производитель</p>
+    @Html.EditorFor(a => a.Juice.Maker)
+    @Html.ValidationMessageFor(a => a.Juice.Maker)
+    <p>Изображение</p>
+    <input type="file" accept="image/*" value="@Model.Juice.ImagePath" name="upload">
+    <p>Год выпуска</p>
+    <input type="date" name="Juice.ShelfLife" value="@(Model.Juice.ShelfLife.ToString("yyyy-MM-dd"))">
+    @Html.ValidationMessageFor(a => a.Juice.ShelfLife)
+    <p>Цена</p>
+    @Html.EditorFor(a => a.Juice.Price)
+    @Html.ValidationMessageFor(a => a.Juice.Price)
+    <p>Категория</p>
+    @Html.DropDownList("CategoryId",
+   Model.Categories.Select(m => new SelectListItem
+   {
+       Selected = m.Id == Model.Juice.CategoryId ? true : false,
+       Value = m.Id.ToString(),
+       Text = m.Name
+   }),
+   new { @class = "form-control", value = Model.Juice.CategoryId })
+    <br>
+    <input type="submit" value="Изменить" />
+}
+

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Purchase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<SHASPLabs2_4.Models.Purchase>
+
+<h2>Покупка</h2>
+
+@Html.ActionLink("Добавить новую покупку", "Add")
+<br>
+<br>
+<form class="form-inline">
+    <label>Выберите имя:</label>
+    <select name="person" class="form-control">
+        <option>Все</option>
+        @foreach (var a in Model)
+        {
+            <option value="@a.Person">@a.Person</option>
+        }
+    </select>
+    <label>Выберите способ оплаты:</label>
+    <select name="wageType" class="form-control">
+        <option>Все</option>
+        @foreach (var a in Model)
+        {
+            <option value="@a.WageType">@a.WageType</option>
+        }
+    </select>
+    <input type="submit" value="Фильтр">
+</form>
+
+<table>
+    <tr style="border-bottom: 2px solid gray;">
+        <td><p>Имя</p></td>
+        <td><p>Адрес</p></td>
+        <td><p>Id сока</p></td>
+        <td><p>Дата покупки</p></td>
+        <td><p>Email</p></td>
+        <td><p>Phone</p></td>
+        <td><p>Способ оплаты</p></td>
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td><p>@b.Person</p></td>
+            <td><p>@b.Address</p></td>
+            <td><p>@b.JuiceId</p></td>
+            <td><p>@b.Date.ToShortDateString()</p></td>
+            <td><p>@b.Email</p></td>
+            <td><p>@b.Phone</p></td>
+            <td><p>@b.WageType</p></td>
+            <td><p><a href="/Purchase/Info/@b.PurchaseId">Детали</a></p></td>
+            <td><p><a href="/Purchase/Editor/@b.PurchaseId">Изменить</a></p></td>
+            <td><p><a href="/Purchase/Delete/@b.PurchaseId">Удалить</a></p></td>
+        </tr>
+    }
+</table>
+

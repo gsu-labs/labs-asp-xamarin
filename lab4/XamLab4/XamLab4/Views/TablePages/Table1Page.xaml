@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamLab4.Table1Page">
+    <StackLayout>
+        <Label Text="Имя" />
+        <Entry Text="{Binding Name}" />
+        <Label Text="Id производителя" />
+        <Entry Text="{Binding IdMake}" />
+        <Label Text="Материал" />
+        <Entry Text="{Binding Material}" />
+        <Label Text="Цена" />
+        <Entry Text="{Binding Price}" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Сохранить" Clicked="SaveProduct" />
+            <Button Text="Удалить" Clicked="DeleteProduct" />
+            <Button Text="Отмена" Clicked="Cancel" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

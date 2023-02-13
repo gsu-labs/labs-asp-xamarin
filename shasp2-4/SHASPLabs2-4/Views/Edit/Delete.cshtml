@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SHASPLabs2_4.Models.Juice
+
+<h2>Удаление сока</h2>
+@using (Html.BeginForm("DeleteConfirmed", "Edit", FormMethod.Post))
+{
+    @Html.HiddenFor(a => a.Id)
+    @Html.DisplayForModel()
+    <br>
+    <input type="submit" value="Удалить" />
+}
+
+
